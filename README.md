@@ -32,6 +32,9 @@ SL Voyager is an innovative AI-driven platform designed to enhance the travel ex
 - **Team Members**: Nadara, Dananji, Shashika, and Tharaka 
 - **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana
 
+---
+---
+
 
 # **The Companion System: Emotional and Cultural Assistance for SL Voyager: IT20391768**
 
