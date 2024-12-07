@@ -8,65 +8,82 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <style>
-
-            body {
-                font-family: monospace;
-            }
-
-            #chatbox {
-                margin-left: auto;
-                margin-right: auto;
-                width: 80%;
-                margin-top: 50px;
-            }
-
-            .botText {
-                font-family: monospace;
-                font-size: 16px;
-                text-align: left;
-                line-height: 25px;
-                color: darkorchid;
-            }
-
-            #userInput {
-                margin-left: auto;
-                margin-right: auto;
-                width: 80%;
-                text-align: center;
-                margin-top: 50px;
-            }
-
-            #textInput {
-                border: 3px solid white;
-                border-bottom: 3px solid gray;
-                font-family: monospace;
-                font-size: 16px;
-                width: 60%;
-                padding: 16px;
-                color: brown;
-            }
-
-            #buttonInput {
-                padding: 5px;
-                font-family: monospace;
-                font-size: 16px;
-                padding: 10px;
-                border: 3px solid lightgray;
-                /*background-color: darkorchid;*/
-                border-radius: 7px;
-            }
-
-            h1 {
-                text-align: center;
-                color: darkorchid;
-                border: solid darkorchid;
-            }
-
-            .userText{
-                text-align: right;
-            }
-
+        /* Background */
+        body {
+            font-family: 'Georgia', serif; 
+            background-color: #f9f4f1; 
+            color: #3e3a36; 
+            margin: 0;
+            padding: 0;
+        }
+    
+        #chatbox {
+            margin: 50px auto;
+            width: 80%;
+            background-color: #fff0f5; 
+            padding: 20px;
+            border: 2px solid #d6a6c1; 
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+        }
+    
+        .botText, .userText {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    
+        .botText {
+            text-align: left;
+            color: #9b4d96; 
+        }
+    
+        .userText {
+            text-align: right;
+            color: #f28ab2; 
+        }
+    
+        #userInput {
+            margin: 50px auto;
+            width: 80%;
+            text-align: center;
+        }
+    
+        #textInput {
+            border: 3px solid #f28ab2; 
+            background-color: #fff; 
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            color: #3e3a36;
+            padding: 12px;
+            width: 60%;
+            border-radius: 5px;
+        }
+    
+        #buttonInput {
+            padding: 10px 20px;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            color: #fff;
+            background-color: #9b4d96; 
+            border: 2px solid #f28ab2; 
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+    
+        #buttonInput:hover {
+            background-color: #f28ab2; 
+        }
+    
+        h1 {
+            text-align: center;
+            color: #9b4d96; 
+            text-shadow: 0 0 15px #f28ab2; 
+            margin-top: 20px;
+        }
     </style>
+    
 
 </head>
 
@@ -91,7 +108,7 @@
 <script>
     function getUserResponse () {
         var userText = $('#textInput').val();
-        var userHTML = "<p class = 'userText'> User :  <span>" + userText + "</span></p>";
+        var userHTML = "<p class = 'userText'>   <span>" + userText + "</span></p>";
         $ ( '#textInput' ).val("");
         $ ( '#chatbox' ).append(userHTML);
         document.getElementById( "userInput" ).scrollIntoView ( {block : 'start' , behavior : 'smooth'} );
