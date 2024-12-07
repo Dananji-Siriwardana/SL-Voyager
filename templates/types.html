@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Types</title>
+</head>
+<body>
+    <h1>Select Types</h1>
+    <form action="/recommend" method="POST">
+        {% for type in types %}
+            <label>
+                <input type="checkbox" name="type" value="{{ type }}"> {{ type }}
+            </label><br>
+        {% endfor %}
+        <button type="submit">Recommend</button>
+    </form>
+</body>
+</html>

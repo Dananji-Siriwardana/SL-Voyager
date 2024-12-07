@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Seasons</title>
+</head>
+<body>
+    <h1>Select Seasons</h1>
+    <form method="POST">
+        {% for season in seasons %}
+            <label>
+                <input type="checkbox" name="season" value="{{ season }}"> {{ season }}
+            </label><br>
+        {% endfor %}
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
