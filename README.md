@@ -20,7 +20,7 @@ SL Voyager is an innovative AI-driven platform designed to enhance the travel ex
    - Predicts peak and off-season trends for optimized planning.  
    - Provides weather and crowd forecasts.  
 
-4. **Assistant Companion System**  
+4. **Assistant Companion System**
    - **Velora**: Emotional support chatbot for stress management.  
    - **Zara**: Cultural guide offering insights into Sri Lanka’s heritage.  
    - **Einstein (MathBot)**: Handles mathematical queries and unit conversions.   
@@ -211,8 +211,8 @@ The Seasonal Tourism Forecasting System is a data-driven engine designed to pred
 
 ## Technology Stack
 **Machine Learning Frameworks**
-- TensorFlow/Keras: For model training and prediction
-- Scikit-learn: For data preprocessing and encoding
+ - TensorFlow/Keras: For model training and prediction
+ - Scikit-learn: For data preprocessing and encoding
 
 
 **Programming Languag**
