@@ -170,7 +170,7 @@ Model partially created with 81.82% accuracy
   python app.py
 ```
 - Access the System in your browser
-`http://127.0.0.1.:5000/`
+`http://127.0.0.1:5000/`
 
 ## Usage
 - Select one or more seasons from the available options.
@@ -187,13 +187,6 @@ Model partially created with 81.82% accuracy
 
 **Developer**: Siriwardana A.P.G.D.P [IT21345746]
 
-
-
-## **Contributors**  
-- **Team Members**: Tharaka, Nadara, Dananji, Shashika  
-- **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana  
-
----
 
 
 # Seasonal Tourism Forecasting System: IT21245060
