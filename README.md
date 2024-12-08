@@ -266,10 +266,6 @@ http://127.0.0.1:5000/
 **Developer**: Weerakoon H.P.S.P. [IT21245060]
 
 
-## **Contributors**
-- **Team Members**: Nadara, Dananji, Shashika, and Tharaka 
-- **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana
-
 ---
 
 
