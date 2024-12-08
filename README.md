@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/24ebb82c-3d09-4617-a394-d315c43431b2)# **SL Voyager: An AI-Integrated Tourism Management System**
+# **SL Voyager: An AI-Integrated Tourism Management System**
 
 ---
 
