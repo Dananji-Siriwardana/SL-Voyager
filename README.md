@@ -256,9 +256,11 @@ http://127.0.0.1:5000/
 
 
 ## Future Enhancements
- = Real-Time Data Integration: Incorporate more dynamic, real-time sources such as social media and mobile application usage to refine predictions
- = Advanced Trend Analytics: Use deep learning models for improved accuracy and to predict longer-term trends
- = User Customization: Enable personalized forecast parameters for specific regions or tourist attractions
+  = Real-Time Data Integration: Incorporate more dynamic, real-time sources such as social media and mobile application usage to refine predictions
+ 
+  = Advanced Trend Analytics: Use deep learning models for improved accuracy and to predict longer-term trends
+ 
+  = User Customization: Enable personalized forecast parameters for specific regions or tourist attractions
 
 
 **Developer**: Weerakoon H.P.S.P. [IT21245060]
