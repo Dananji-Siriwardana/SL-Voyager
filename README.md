@@ -109,11 +109,88 @@ Additionally, it features Einstein, the MathBot, for practical assistance with u
 - Integrate every bot into a single system
 - UIs with high user experience  
 
+
+**Developer**: Tharaka V B Pallevela [IT20391768]  
+
 ---
 
+
+
+# The sub component:Attraction Suggestion System - IT21345746 
+
+## Overview 
+
+The Attraction Suggestion System is a recommendation engine that uses user preferences to suggest tourist attractions and events based on real time seasonal data.Along with practical travel tips that aligns with differenet weather conditions. The system is designed to make travel planning intuitive and enjoyable by leveraging machine learning models to provide personalized recommendations.And specially made for Sri Lankan tourism.
+
+
+
+
+## Features
+**Personalized attraction recommendation**
+
+**Seasonal and event-based suggestions**
+
+**Questionaries survey**
+
+**Practical travel tips**
+
+**Made for Sri Lanka**
+
+
+## Technology Stack
+**Machine Learning Frameworks**
+- TensorFlow/Keras: For model training and prediction.
+- Scikit-learn: For data preprocessing and encoding.
+Model partially created with 81.82% accuracy
+
+**Programming Language**
+- Python
+
+**Libraries**
+- pandas for data handling.
+- numpy for numerical computations
+
+**Front-End**
+- HTML/CSS
+- Javascript(React)
+
+**Dataset fields**
+- Name: Attraction name.
+- Description: Short description of the attraction.
+- Type: Type of activity associated with the attraction.
+- Season: Best season(s) for visiting the attraction.
+- Location: Geographical location of the attraction.
+
+
+## Installation
+- Clone the repository
+- Install the dependencies
+- Run the Flask Server
+```bash
+  python app.py
+```
+- Access the System in your browser
+`http://127.0.0.1.:5000/`
+
+## Usage
+- Select one or more seasons from the available options.
+- Select activity types that match the selected seasons.
+- Receive recommendations for attractions, including names and locations
+
+
+## Future Enhancements
+
+- Adjust the system with upcoming events
+- Recommendations according to real-time weather
+- Practicle tips suggestion according to weather and the recommended places
+
+
+**Developer**: Siriwardana A.P.G.D.P [IT21345746]
+
+
+
 ## **Contributors**  
-- **Developer**: Tharaka V B Pallevela [IT20391768]  
-- **Team Members**: Nadara, Dananji, Shashika  
+- **Team Members**: Tharaka, Nadara, Dananji, Shashika  
 - **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana  
 
 ---
