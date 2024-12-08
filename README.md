@@ -282,7 +282,7 @@ The Hotel Recommendation System is a core component of **SL Voyager**, designed 
 
 ## **Features**  
 1. **Personalized Recommendations**:  
-   - Suggests hotels based on user preferences like budget, location, and amenities.  
+   - Suggests hotels based on user preferences like budget, location, amenities and events.  
 2. **Comprehensive Filters**:  
    - Options for luxury, budget-friendly, family-friendly, eco-friendly, and pet-friendly accommodations.  
 3. **User-Friendly Interface**:  
@@ -322,7 +322,8 @@ The Hotel Recommendation System is a core component of **SL Voyager**, designed 
 2. Enter your preferences, such as:  
    - Budget range  
    - Number of guests  
-   - Proximity to attractions or areas of interest  
+   - Proximity to attractions or areas of interest
+   - Preffered amenities
 3. View tailored results and make informed choices.  
 
 ---
