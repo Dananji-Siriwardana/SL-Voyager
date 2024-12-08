@@ -253,8 +253,8 @@ The Seasonal Tourism Forecasting System is a data-driven engine designed to pred
 **Developer**: Weerakoon H.P.S.P. [IT21245060]
 
 ## **Contributors**
--**Team Members**: Tharaka, Nadara, Dananji, Shashika
--**Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana
+- **Team Members**: Nadara, Dananji, Shashika, and Tharaka 
+- **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana
 
 ---
 
