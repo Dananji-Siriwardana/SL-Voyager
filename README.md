@@ -1,4 +1,4 @@
-# **SL Voyager: An AI-Integrated Tourism Management System**
+![image](https://github.com/user-attachments/assets/24ebb82c-3d09-4617-a394-d315c43431b2)# **SL Voyager: An AI-Integrated Tourism Management System**
 
 ---
 
@@ -332,11 +332,13 @@ The Hotel Recommendation System is a core component of **SL Voyager**, designed 
 - Advanced filtering, including accessibility features and real-time pricing.  
 - User review-based recommendations.  
 
+**Developer**: Peiris H.N.K[IT21249198]
+
 ---
 
-## **Contributors**  
-- **Developer**: Nadara  
-- **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana  
+## **Contributors**
+- **Team Members**: Nadara, Dananji, Shashika, and Tharaka 
+- **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana
 
 ---
 
