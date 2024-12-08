@@ -272,3 +272,76 @@ http://127.0.0.1:5000/
 
 ---
 
+
+---
+
+# **Hotel Recommendation System: A Component of SL Voyager**
+
+---
+
+## **Overview**  
+The Hotel Recommendation System is a core component of **SL Voyager**, designed to simplify the accommodation selection process for travelers. By utilizing advanced algorithms and filtering options, the system provides tailored hotel suggestions that meet diverse user preferences, making the booking experience seamless and enjoyable.
+
+---
+
+## **Features**  
+1. **Personalized Recommendations**:  
+   - Suggests hotels based on user preferences like budget, location, and amenities.  
+2. **Comprehensive Filters**:  
+   - Options for luxury, budget-friendly, family-friendly, eco-friendly, and pet-friendly accommodations.  
+3. **User-Friendly Interface**:  
+   - Easy navigation to find the best stay options near attractions or specific areas.  
+4. **Local Insights**:  
+   - Highlights accommodations with unique features, such as cultural or scenic significance.  
+
+---
+
+## **Installation**  
+1. Clone the repository:  
+   ```bash
+   git clone <repository-link>
+   cd hotel-recommendation
+   ```  
+2. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
+   ```  
+3. Run the server  
+
+4. Access the system in your browser
+
+   
+---
+
+## **Technology Stack**  
+- **Frontend**: HTML, CSS, JavaScript  
+- **Backend**: Python 
+- **Data Handling**: Pandas, NumPy  
+- **Recommendation Model**: Collaborative and content-based filtering  
+
+---
+
+## **Usage**  
+1. Access the hotel recommendation page 
+2. Enter your preferences, such as:  
+   - Budget range  
+   - Number of guests  
+   - Proximity to attractions or areas of interest  
+3. View tailored results and make informed choices.  
+
+---
+
+## **Future Enhancements**  
+- Integration with real-time booking APIs for direct reservations.  
+- Advanced filtering, including accessibility features and real-time pricing.  
+- User review-based recommendations.  
+
+---
+
+## **Contributors**  
+- **Developer**: Nadara  
+- **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana  
+
+---
+
+
