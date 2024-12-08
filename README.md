@@ -198,69 +198,69 @@ The Seasonal Tourism Forecasting System is a data-driven engine designed to pred
 
 
 ## Features
-**Seasonal Demand Forecasting: Predicts tourism demand for various seasons based on historical and real-time data**
+- **Seasonal Demand Forecasting: Predicts tourism demand for various seasons based on historical and real-time data**
 
-**Trend Prediction: Analyzes long-term trends and makes predictions about future tourism volumes**
+- **Trend Prediction: Analyzes long-term trends and makes predictions about future tourism volumes**
 
-**Real-time Data Integration: Incorporates up-to-the-minute data from weather reports, social media, and travel behavior to refine predictions**
+- **Real-time Data Integration: Incorporates up-to-the-minute data from weather reports, social media, and travel behavior to refine predictions**
 
-**Optimized Resource Allocation: Helps travel agencies plan for peak and off-season resource management**
+- **Optimized Resource Allocation: Helps travel agencies plan for peak and off-season resource management**
 
-**Customizable Parameters: Allows users to adjust forecasts based on their own specific data, including regional variations and local events**
+- **Customizable Parameters: Allows users to adjust forecasts based on their own specific data, including regional variations and local events**
 
 
 ## Technology Stack
 **Machine Learning Frameworks**
-  - TensorFlow/Keras: For model training and prediction
-  - Scikit-learn: For data preprocessing and encoding
+- TensorFlow/Keras: For model training and prediction
+- Scikit-learn: For data preprocessing and encoding
 
 
 **Programming Languag**
- -Python: Primary language used for system development
+- Python: Primary language used for system development
 
 
 **Libraries**
- -Pandas: For data handling
- -Numpy: For numerical computations
+- Pandas: For data handling
+- Numpy: For numerical computations
 
 
 **Front-End**
- -HTML/CSS: For the system interface
- -JavaScript (React): For enhancing user interactivity
+- HTML/CSS: For the system interface
+- JavaScript (React): For enhancing user interactivity
 
 
 **Dataset Fields**
- -Tourism Demand: Number of visitors in a given period
- -Date/Time: Specific date and season
- -Location: Geographical location of interest (city, region, etc.)
- -Weather Conditions: Data on weather forecasts impacting tourism
- -Event Data: Information about local events, holidays, and festivals
+- Tourism Demand: Number of visitors in a given period
+- Date/Time: Specific date and season
+- Location: Geographical location of interest (city, region, etc.)
+- Weather Conditions: Data on weather forecasts impacting tourism
+- Event Data: Information about local events, holidays, and festivals
 
 
 ## Installation
-= Clone the repository
- -Install dependencies using: pip install -r requirements.txt
- -Run the Flask server:
+- Clone the repository
+- Install dependencies using: pip install -r requirements.txt
+- Run the Flask server:
  ```
  python app.py
 ```
--Access the system via the browser at: 
+- Access the system via the browser at: 
 ```
 http://127.0.0.1:5000/
 ```
 
 ## Usage
- -Select specific seasons or time periods for forecasting
- -Input regional data and event schedules for more accurate predictions
- -Receive seasonal forecasts, including insights on peak tourism periods, visitor counts, and resource needs
+- Select specific seasons or time periods for forecasting
+- Input regional data and event schedules for more accurate predictions
+- Receive seasonal forecasts, including insights on peak tourism periods, visitor counts, and resource needs
 
 
 ## Future Enhancements
-  = Real-Time Data Integration: Incorporate more dynamic, real-time sources such as social media and mobile application usage to refine predictions
+- Real-Time Data Integration: Incorporate more dynamic, real-time sources such as social media and mobile application usage to refine predictions
  
-  = Advanced Trend Analytics: Use deep learning models for improved accuracy and to predict longer-term trends
+- Advanced Trend Analytics: Use deep learning models for improved accuracy and to predict longer-term trends
  
-  = User Customization: Enable personalized forecast parameters for specific regions or tourist attractions
+- User Customization: Enable personalized forecast parameters for specific regions or tourist attractions
 
 
 **Developer**: Weerakoon H.P.S.P. [IT21245060]
