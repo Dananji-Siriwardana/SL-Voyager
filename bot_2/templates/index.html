@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,7 +90,7 @@
 
 
 <body>
-    <h1>--------VELORA--------</h1>
+    <h1>--------ZARADIEL--------</h1>
     <div>
         <div id  = "chatbox">
             <p class="botText">
@@ -134,5 +135,135 @@
 </script>
 
 
+</body>
+</html> 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaradiel - Chat</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Background and General Styling */
+        body {
+            font-family: 'Georgia', serif; 
+            background-color: #f4e8c1; /* Warm parchment background */
+            color: #5a3e1b; 
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Chatbox */
+        #chatbox {
+            margin: 50px auto;
+            width: 80%;
+            background: #d2b48c; /* Warm brown background */
+            padding: 20px;
+            border: 3px solid #8b5a2b; /* Darker brown border */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .botText, .userText {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        
+        .botText {
+            text-align: left;
+            color: #6a4c34; /* Rich brown */
+        }
+        
+        .userText {
+            text-align: right;
+            color: #b76e42; /* Earthy burnt orange */
+        }
+        
+        /* Input Section */
+        #userInput {
+            margin: 50px auto;
+            width: 80%;
+            text-align: center;
+        }
+        
+        #textInput {
+            border: 2px solid #8b5a2b; 
+            background-color: #f9f4e2; 
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            color: #5a3e1b;
+            padding: 12px;
+            width: 60%;
+            border-radius: 5px;
+        }
+        
+        #buttonInput {
+            padding: 10px 20px;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            color: #fff;
+            background-color: #8b5a2b; 
+            border: 2px solid #b76e42; 
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        
+        #buttonInput:hover {
+            background-color: #b76e42; 
+        }
+        
+        /* Header Styling */
+        h1 {
+            text-align: center;
+            color: #8b5a2b;
+            text-shadow: 0 0 10px rgba(139, 90, 43, 0.5);
+            margin-top: 20px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>ZARADIEL</h1>
+    <div>
+        <div id="chatbox">
+            <p class="botText">
+                <span>What's up hero...</span>
+            </p>
+        </div>
+        <div id="userInput">
+            <input id="textInput" type="text" name="userMessage" placeholder="Type here"/>
+            <input id="buttonInput" type="submit" value=">"/>
+        </div>
+    </div>
+    <script>
+        function getUserResponse() {
+            var userText = $('#textInput').val();
+            var userHTML = "<p class='userText'><span>" + userText + "</span></p>";
+            $('#textInput').val("");
+            $('#chatbox').append(userHTML);
+            document.getElementById("userInput").scrollIntoView({block: 'start', behavior: 'smooth'});
+            $.get("/get", {userMessage: userText}).done(function(data) {
+                var botHTML = "<p class='botText'> Velora: <span>" + data + "</span></p>";
+                $('#chatbox').append(botHTML);
+            });
+        }
+
+        $("#textInput").keypress(function(e) {
+            if(e.which == 13){
+                getUserResponse();
+            }
+        });
+
+        $('#buttonInput').click(function(){
+            getUserResponse();
+        });
+    </script>
 </body>
 </html>
