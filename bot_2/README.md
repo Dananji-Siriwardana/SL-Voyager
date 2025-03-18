@@ -1,4 +1,6 @@
+# **The Companion System: Emotional and Cultural Assistance for SL Voyager**
 
+---
 
 ## **Overview**  
 The Companion System is a key component of **SL Voyager**, designed to enrich the travel experience by providing tourists with emotional support and cultural insights. It includes two major chatbots:  
@@ -67,3 +69,13 @@ Additionally, it features Einstein, the MathBot, for practical assistance with u
 - Zara  
 - A weather bot  
 - Integrate every bot into a single system
+- UIs with high user experience  
+
+---
+
+## **Contributors**  
+- **Developer**: Tharaka V B Pallevela [IT20391768]  
+- **Team Members**: Nadara, Dananji, Shashika  
+- **Supervisors**: Ms. Thilini Jayalath and Dr. Lakmini Abeywardhana  
+
+---
