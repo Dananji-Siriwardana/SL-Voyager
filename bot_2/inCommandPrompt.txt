@@ -1,1 +1,0 @@
-D:\Python\3.8\python.exe E:\College\Research\bot_2\index.py
