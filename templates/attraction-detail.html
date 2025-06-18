@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% block title %}{{ attraction.name | default('Attraction Details') }}{% endblock %}
+{% block content %}
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        color: #ffffff;
+    }
+    .section {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 170, 255, 0.5);
+    }
+    h2 {
+        font-size: 2rem;
+        color: #00aaff;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    h3 {
+        font-size: 1.5rem;
+        color: #ffffff;
+        margin: 1rem 0;
+    }
+    .attraction-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+    #map {
+        height: 300px;
+        border-radius: 10px;
+        margin: 1rem 0;
+    }
+    .travel-tips {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 1rem 0;
+    }
+    .travel-tips li {
+        margin: 0.5rem 0;
+        color: #ffffff;
+    }
+    .error, .debug {
+        color: #ff5555;
+        font-size: 1rem;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    .debug { color: #00aaff; }
+    button {
+        padding: 10px 20px;
+        background: #00aaff;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        margin: 10px;
+    }
+    button:hover:not(:disabled) {
+        background: #66ccff;
+        transform: scale(1.05);
+    }
+    .detail-item {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+    }
+    @media (max-width: 600px) {
+        .container { padding: 15px; }
+        h2 { font-size: 1.5rem; }
+        h3 { font-size: 1.2rem; }
+        .attraction-image { max-height: 200px; }
+        #map { height: 200px; }
+        button { font-size: 14px; }
+        .detail-item { font-size: 0.9rem; }
+    }
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<div class="container">
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% else %}
+        <h2>{{ attraction.name }}</h2>
+        <div class="section">
+            <h3>Overview</h3>
+            <p class="detail-item"><strong>Description:</strong> {{ attraction.description }}</p>
+        </div>
+        <div class="section">
+            <h3>Location on Map</h3>
+            {% if attraction.latitude is number and attraction.longitude is number and attraction.latitude != 0 and attraction.longitude != 0 %}
+                <div id="map"></div>
+            {% else %}
+                <p class="error">Map unavailable: Invalid or missing coordinates (Lat: {{ attraction.latitude }}, Lon: {{ attraction.longitude }}).</p>
+            {% endif %}
+        </div>
+
+        <div class="section">
+            <h3>Practical Travel Tips</h3>
+            {% if attraction.travel_tips %}
+                <ul class="travel-tips">
+                    {% for tip in attraction.travel_tips %}
+                        <li>{{ tip }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No specific travel tips available. Check local guidelines before visiting.</p>
+            {% endif %}
+        </div>
+
+        <button onclick="window.location.href='/recommendations'">Back to Attractions</button>
+    {% endif %}
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    {% if attraction.latitude is number and attraction.longitude is number and attraction.latitude != 0 and attraction.longitude != 0 %}
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const lat = {{ attraction.latitude }};
+                const lon = {{ attraction.longitude }};
+                if (isNaN(lat) || isNaN(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
+                    throw new Error('Invalid coordinates');
+                }
+                const map = L.map('map').setView([lat, lon], 13);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup('{{ attraction.name | escape }}')
+                    .openPopup();
+            } catch (error) {
+                console.error('Map initialization error:', error);
+                document.getElementById('map').innerHTML = '<p class="error">Failed to load map: ' + error.message + '</p>';
+            }
+        });
+    {% endif %}
+    
+</script>
+{% endblock %}

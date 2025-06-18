@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% block title %}Recommendations{% endblock %}
+{% block content %}
+<style>
+    section {
+        padding: 40px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .recommendations-section {
+        flex: 1;
+        min-width: 300px;
+        margin-right: 20px;
+    }
+    .events-section {
+        flex: 1;
+        min-width: 300px;
+        text-align: left;
+    }
+    h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+    .attraction-card, .event-card {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px 0;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+        cursor: pointer;
+    }
+    .attraction-card:hover, .event-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 170, 255, 0.5);
+    }
+    .attraction-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .attraction-card p, .event-card p {
+        color: #ffffff;
+        margin: 5px 0;
+    }
+    .event-card img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .error, .info {
+        color: #ff5555;
+        font-size: 16px;
+        margin: 15px 0;
+    }
+    .info { color: #00aaff; }
+    button {
+        padding: 10px 20px;
+        background: #00aaff;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        margin: 10px;
+    }
+    button:hover:not(:disabled) {
+        background: #66ccff;
+        transform: scale(1.05);
+    }
+    @media (max-width: 600px) {
+        section { 
+            padding: 20px; 
+            flex-direction: column;
+        }
+        .recommendations-section, .events-section {
+            margin-right: 0;
+        }
+        h2 { font-size: 20px; }
+        .attraction-card, .event-card { padding: 10px; }
+        .attraction-card img { height: 120px; }
+        button { font-size: 14px; }
+    }
+</style>
+
+<div class="App">
+    <main>
+        <section>
+            <div class="recommendations-section">
+                <h2>Your Attractions</h2>
+                <p class="info" id="season-info"></p>
+                <p class="error" id="error"></p>
+                <div id="recommendations"></div>
+                <div>
+                    <button onclick="window.location.href='/traveler'">Start Over</button>
+                    <button onclick="window.location.href='/'">Back to Home</button>
+                </div>
+            </div>
+            <div class="events-section">
+                <h2>Upcoming Events</h2>
+                <p class="error" id="events-error"></p>
+                <div id="events"></div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    const recommendationsDiv = document.getElementById('recommendations');
+    const seasonInfo = document.getElementById('season-info');
+    const errorDiv = document.getElementById('error');
+    const eventsDiv = document.getElementById('events');
+    const eventsError = document.getElementById('events-error');
+
+    async function displayRecommendations() {
+        const data = JSON.parse(localStorage.getItem('recommendations')) || {};
+        seasonInfo.textContent = `Current Season: ${data.season || 'Unknown'}`;
+        
+        if (data.error) {
+            errorDiv.textContent = `Error: ${data.error}`;
+            return;
+        }
+
+        if (!data.recommendations || data.recommendations.length === 0) {
+            errorDiv.textContent = 'No attractions found. Try different selections.';
+            return;
+        }
+
+        recommendationsDiv.innerHTML = '';
+        data.recommendations.forEach(rec => {
+            const card = document.createElement('div');
+            card.className = 'attraction-card';
+            card.innerHTML = `
+                <p><strong>${rec.name}</strong></p>
+            `;
+            card.addEventListener('click', () => {
+                window.location.href = `/attraction/${encodeURIComponent(rec.name)}`;
+            });
+            recommendationsDiv.appendChild(card);
+        });
+    }
+
+    async function fetchEvents() {
+        try {
+            const response = await fetch('/api/custom-events', {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await response.json();
+            
+            if (!response.ok) {
+                eventsError.textContent = `Error: ${data.error || 'Failed to fetch events'}`;
+                return;
+            }
+
+            eventsDiv.innerHTML = '';
+            if (data.length === 0) {
+                eventsError.textContent = 'No upcoming events found.';
+                return;
+            }
+
+            data.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.innerHTML = `
+                    <p><strong>${event.title}</strong></p>
+                    <p>Date: ${event.start_date}</p>
+                    <p>Type: ${event.type}</p>
+                    <p>Audience: ${event.target_audience}</p>
+                    <p>${event.description || 'No description available'}</p>
+                    ${event.image_url ? `<img src="${event.image_url}" alt="${event.title}">` : ''}
+                `;
+                eventsDiv.appendChild(card);
+            });
+        } catch (error) {
+            eventsError.textContent = `Error: ${error.message}`;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        displayRecommendations();
+        fetchEvents();
+    });
+</script>
+{% endblock %}
