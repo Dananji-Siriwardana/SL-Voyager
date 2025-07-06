@@ -139,7 +139,6 @@ The Attraction Suggestion System is a recommendation engine that uses user prefe
 
 ## Technology Stack
 **Machine Learning Frameworks**
-- TensorFlow/Keras: For model training and prediction.
 - Scikit-learn: For data preprocessing and encoding.
 Model partially created with 81.82% accuracy
 
@@ -152,7 +151,7 @@ Model partially created with 81.82% accuracy
 
 **Front-End**
 - HTML/CSS
-- Javascript(React)
+- Javascript
 
 **Dataset fields**
 - Name: Attraction name.
